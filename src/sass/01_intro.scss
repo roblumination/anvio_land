@@ -58,7 +58,6 @@
     }
 
     &__info {
-      // background-color: #000;
       display: flex;
       margin-left: 20px;
       width: calc(100% - 20px);
@@ -66,14 +65,14 @@
       &__dimensions {
         display: flex;
         position: relative;
-        // flex-direction: column;
-        // align-items: flex-start;
-        // flex-wrap: wrap;
         width: 100%;
-        max-width: 400px;
         margin: 0 auto;
         margin-top: 10px;
         padding: 0px;
+
+        @media screen and (min-width: 600px) {
+          width: 60vw;
+        }
 
         & > * {
           display: flex;
@@ -86,7 +85,6 @@
         .dimension-item {
           position: relative;
           z-index: 100;
-          // background-color: #000;
           font-weight: 600;
           line-height: 18px;
 
@@ -101,26 +99,89 @@
           top: -40px;
           height: 203px;
           width: auto;
-          // width: 283px;
-          // height: 203px;
         }
-
-        // justify-content: start;
       }
     }
   }
 
   .content-buttons {
     margin-top: 32px;
-    // display: flex;
-    // flex-direction: column;
-    // gap: 10px;
 
     & > * {
       display: block;
       margin: 0 auto;
       margin-bottom: 10px;
-      // width: auto;
+    }
+  }
+
+  .content-slider {
+    width: 100%;
+    position: relative;
+    &__card {
+      background: rgba(#fff, 0.3) url("/src/assets/sym_red_discount-small.svg");
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      height: 140px;
+      margin: 0 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      width: 100%;
+
+      &__wrapper {
+        width: 100%;
+        // display: flex;
+        justify-content: center;
+        max-width: 500px;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-top: 32px;
+      }
+
+      &__extender {
+        display: flex;
+        width: calc(3 * 100%);
+        // transform: translateX(-17%);
+        // background-color: #000;
+      }
+    }
+
+    &__indicators {
+      display: flex;
+      gap: 10px;
+      // align-items: center;
+      justify-content: center;
+      // margin: 0 auto;
+      margin-top: 20px;
+
+      .indicator-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.5;
+      }
+    }
+
+    &__arrow {
+      width: 60px;
+      height: 60px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 75px;
+      box-shadow: $modal-shadow;
+
+      &_right {
+        transform: rotate(180deg);
+        right: -10px;
+      }
+
+      &_left {
+        left: -10px;
+      }
     }
   }
 }
