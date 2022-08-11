@@ -1,0 +1,140 @@
+.bg-big-circle {
+  position: absolute;
+  width: 1404px;
+  height: 1404px;
+  top: -414px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1000;
+
+  // top: 500px;
+
+  &__wrapper {
+    z-index: 0;
+    position: absolute;
+    margin-top: -$header-height-small;
+    // position: relative;
+    width: 100%;
+    height: 940px + $header-height-small;
+    overflow: hidden;
+  }
+}
+
+.intro__content {
+  position: relative;
+  z-index: 500;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .content-location {
+    margin-top: 17px;
+    &__header {
+      margin-bottom: 10px;
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+
+  .content-main {
+    margin-top: 56px;
+    width: 100%;
+    &__header {
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+
+    &__subheader {
+      font-size: 16px;
+      width: 230px;
+      margin: 0 auto;
+    }
+
+    &__info {
+      // background-color: #000;
+      display: flex;
+      margin-left: 20px;
+      width: calc(100% - 20px);
+
+      &__dimensions {
+        display: flex;
+        position: relative;
+        // flex-direction: column;
+        // align-items: flex-start;
+        // flex-wrap: wrap;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 0px;
+
+        & > * {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 31px;
+          width: 170px;
+        }
+
+        .dimension-item {
+          position: relative;
+          z-index: 100;
+          // background-color: #000;
+          font-weight: 600;
+          line-height: 18px;
+
+          display: flex;
+          text-align: left;
+          gap: 15px;
+        }
+
+        .dimension-boy {
+          position: absolute;
+          right: 0px;
+          top: -40px;
+          height: 203px;
+          width: auto;
+          // width: 283px;
+          // height: 203px;
+        }
+
+        // justify-content: start;
+      }
+    }
+  }
+
+  .content-buttons {
+    margin-top: 32px;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 10px;
+
+    & > * {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      // width: auto;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-medium) {
+  .bg-big-circle {
+    width: 2262px;
+    height: 2290px;
+    top: -1175px;
+    transform: translateX(-50% - 30%);
+
+    &__wrapper {
+      margin-top: -$header-height-big;
+      height: 1046px + $header-height-big;
+    }
+  }
+}

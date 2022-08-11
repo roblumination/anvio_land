@@ -1,0 +1,19 @@
+{
+  "name": "anvio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0",
+    "posthtml-doctype": "^1.1.1",
+    "posthtml-include": "^1.7.4"
+  },
+  "source": "src/html/index.html"
+}
