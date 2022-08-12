@@ -1,0 +1,2 @@
+const infoNum1=document.getElementById("info-number-1"),infoNum2=document.getElementById("info-number-2"),infoScrollPos=infoNum1.offsetTop;let isInfoCountStarted=!1;async function startInfoCount(){for(let n=0;n<26;n++)n<=12&&(infoNum1.innerText=n),n<=26&&(infoNum2.innerText=n),await delay(40)}function delay(n){return new Promise((o=>{setTimeout((()=>{o(2)}),n)}))}window.addEventListener("scroll",(n=>{!isInfoCountStarted&&this.scrollY>infoScrollPos-600&&(isInfoCountStarted=!0,startInfoCount())}));
+//# sourceMappingURL=index.aa01951d.js.map
