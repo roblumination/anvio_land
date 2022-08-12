@@ -30,6 +30,7 @@
         border: none;
         width: 50px;
         height: 50px;
+        text-decoration: none;
 
         &_location {
           // @include useIco("location.svg");
@@ -66,7 +67,12 @@
     .navigation-main {
       display: flex;
       // gap: 26px;
-      gap: clamp(15px, 0.05vw, 26px);
+      // gap: clamp(15px, 0.05vw, 26px);
+      gap: 26px;
+
+      &_right {
+        gap: 40px;
+      }
 
       &__button {
         display: flex;
@@ -74,6 +80,10 @@
         text-transform: uppercase;
         gap: 10px;
         position: relative;
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        letter-spacing: 5%;
         // height: 100%;
 
         & > * {
@@ -110,6 +120,7 @@
 
     .main-button {
       margin: auto 0;
+      font-size: 16px;
 
       @media screen and (max-width: 1280px) {
         position: fixed;
