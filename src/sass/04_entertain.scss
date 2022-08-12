@@ -60,6 +60,13 @@
         & > * {
           display: block;
         }
+
+        &__header {
+        }
+        &__text {
+          &__item {
+          }
+        }
       }
     }
   }
