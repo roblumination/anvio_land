@@ -1,7 +1,24 @@
+let state = {
+  // need to close modal without background
+  modalIsActive: false,
+  modalSmallLocationIsActive: false,
+  modalSmallMenuIsActive: false,
+  modalNormalIsActive: false,
+};
+
 const buttons = {
   location: document.getElementById("header-btn-location"),
   phone: document.getElementById("header-btn-phone"),
   menu: document.getElementById("header-btn-menu"),
+  price: document.getElementById("btn-price"),
+  priceClose: "-m+",
+};
+
+const modals = {
+  background: document.querySelector(".modal__background"),
+  menu: document.getElementById("modal-menu"),
+  location: document.getElementById("modal-location"),
+  price: document.getElementById("modal-price"),
 };
 
 const menuIco = {
@@ -13,6 +30,7 @@ buttons.location.addEventListener("click", () => {
   state.modalSmallLocationIsActive = !state.modalSmallLocationIsActive;
   state.modalSmallMenuIsActive = false;
   state.modalIsActive = state.modalSmallLocationIsActive ? true : false;
+  state.modalNormalIsActive = false;
 
   render();
 });
@@ -21,30 +39,31 @@ buttons.menu.addEventListener("click", () => {
   state.modalSmallMenuIsActive = !state.modalSmallMenuIsActive;
   state.modalIsActive = state.modalSmallMenuIsActive ? true : false;
   state.modalSmallLocationIsActive = false;
+  state.modalNormalIsActive = false;
 
   render();
 });
 
-const modals = {
-  background: document.querySelector(".modal__background"),
-  menu: document.getElementById("modal-menu"),
-  location: document.getElementById("modal-location"),
-};
+buttons.price.addEventListener("click", () => {
+  console.log("price!");
+  state.modalSmallMenuIsActive = false;
+  state.modalIsActive = true;
+  state.modalSmallLocationIsActive = false;
+  state.modalNormalIsActive = true;
+
+  render();
+});
 
 modals.background.addEventListener("click", (e) => {
   if (e.target != modals.background) return;
   state.modalIsActive = false;
   state.modalSmallLocationIsActive = false;
   state.modalSmallMenuIsActive = false;
+  // state.moda;
+  state.modalNormalIsActive = false;
+
   render();
 });
-
-let state = {
-  // need to close modal without background
-  modalIsActive: false,
-  modalSmallLocationIsActive: false,
-  modalSmallMenuIsActive: false,
-};
 
 function render() {
   // apply styles according to state{}
@@ -84,6 +103,12 @@ function render() {
   buttons.location.style.backgroundColor = state.modalSmallLocationIsActive
     ? "#fff"
     : "#fff0";
+
+  modals.price.style.transform = state.modalNormalIsActive
+    ? "translateX(0px)"
+    : "translateX(300px)";
+  modals.price.style.opacity = state.modalNormalIsActive ? "1" : "0.0";
+  modals.price.style.pointerEvents = state.modalNormalIsActive ? "all" : "none";
 }
 
 // setTimeout(() => render(), 1000);
