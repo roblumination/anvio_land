@@ -61,17 +61,17 @@
       display: block;
       height: 40px;
       width: auto;
-      margin: 15px 30px;
+      margin: 15px 15px;
     }
 
     .navigation-main {
       display: flex;
       // gap: 26px;
       // gap: clamp(15px, 0.05vw, 26px);
-      gap: 26px;
+      gap: 10px;
 
       &_right {
-        gap: 40px;
+        gap: 10px;
       }
 
       &__button {
@@ -152,7 +152,7 @@
   margin-top: -$header-height-small;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $screen-medium) {
   .header-main {
     height: $header-height-big;
 
@@ -177,5 +177,141 @@
 
   .header-underlayer {
     margin-top: -$header-height-big;
+  }
+}
+
+@media screen and (min-width: $screen-big) {
+  .header-main {
+    .logo-header {
+      display: block;
+      height: 40px;
+      width: auto;
+      margin: 15px 30px;
+    }
+
+    &__menu-big {
+      // display: none;
+      // height: 100%;
+      // flex-grow: 1;
+      // justify-content: space-between;
+      // margin-right: 30px;
+
+      .logo-header {
+        // display: block;
+        // height: 40px;
+        // width: auto;
+        // margin: 15px 30px;
+      }
+
+      .navigation-main {
+        // display: flex;
+        // gap: 26px;
+        // gap: clamp(15px, 0.05vw, 26px);
+        gap: 26px;
+
+        &_right {
+          gap: 15px;
+        }
+
+        &__button {
+          display: flex;
+          align-items: center;
+          text-transform: uppercase;
+          gap: 10px;
+          position: relative;
+          text-decoration: none;
+          color: #000;
+          font-size: 16px;
+          letter-spacing: 5%;
+          // height: 100%;
+
+          & > * {
+            display: block;
+          }
+
+          &:hover {
+            color: $main;
+            cursor: pointer;
+
+            .arrow {
+              stroke: $main;
+            }
+
+            .navigation-main__button__menu {
+              opacity: 1;
+              pointer-events: all;
+              color: #000;
+            }
+          }
+
+          &__menu {
+            pointer-events: none;
+            padding: 30px;
+            opacity: 0;
+            position: absolute;
+            top: 60px;
+            background-color: #eee;
+            border-radius: 0 30px 30px 30px;
+            box-shadow: $modal-shadow;
+          }
+        }
+      }
+
+      .main-button {
+        margin: auto 0;
+        font-size: 16px;
+
+        @media screen and (max-width: 1280px) {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+
+          height: 60px;
+          padding: 10px 40px;
+          font-size: 16px;
+
+          box-shadow: $modal-shadow;
+        }
+
+        // width: ;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .header-main {
+    .logo-header {
+      display: block;
+      height: 40px;
+      width: auto;
+      margin: 15px 30px;
+    }
+
+    &__menu-big {
+      // display: none;
+      // height: 100%;
+      // flex-grow: 1;
+      // justify-content: space-between;
+      // margin-right: 30px;
+
+      .logo-header {
+        // display: block;
+        // height: 40px;
+        // width: auto;
+        // margin: 15px 30px;
+      }
+
+      .navigation-main {
+        // display: flex;
+        // gap: 26px;
+        // gap: clamp(15px, 0.05vw, 26px);
+        gap: 26px;
+
+        &_right {
+          gap: 40px;
+        }
+      }
+    }
   }
 }

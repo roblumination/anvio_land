@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd dist && rm * && cd .. && npx parcel build src/html/index.html --public-url ./",
-    "serve": "npx parcel serve"
+    "serve": "cd dist && rm * && cd .. && npx parcel serve"
   },
   "keywords": [],
   "author": "",
