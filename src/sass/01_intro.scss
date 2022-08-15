@@ -130,9 +130,15 @@
       background-repeat: no-repeat;
       height: 140px;
       margin: 0 20px;
+      padding: 20px 30px;
       border-radius: 20px;
       backdrop-filter: blur(10px);
       width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
       &__wrapper {
         width: 100%;
@@ -152,6 +158,20 @@
         transition: all 0.5s;
         // transform: translateX(-17%);
         // background-color: #000;
+      }
+
+      &__text {
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 0.05em;
+      }
+
+      &__header {
+        font-size: 16px;
+      }
+
+      &__button {
+        max-width: 200px;
       }
     }
 
@@ -349,13 +369,31 @@
         background-repeat: no-repeat;
         background-position: right bottom;
         border-radius: 30px;
+        padding: 30px 50px;
+
+        align-items: flex-start;
 
         &__wrapper {
           max-width: 540px;
         }
 
-        // &__extender {
-        // }
+        &__text {
+          // text-transform: uppercase;
+          text-align: left;
+          font-size: 24px;
+          // letter-spacing: 0.05em;
+        }
+
+        &__header {
+          font-size: 24px;
+        }
+
+        &__button {
+          max-width: 260px;
+          height: 60px;
+          font-size: 16px;
+          padding: 20px 40px;
+        }
       }
 
       // &__indicators {
